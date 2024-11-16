@@ -113,7 +113,7 @@ app.post('/subscribe', async (req, res) => {
       </html>
     `;
     
-    
+
     const mailOptions = {
       from: `Coinova <${process.env.EMAIL_USER}>`,
       to: email,
@@ -181,6 +181,12 @@ app.post('/contact', async (req, res) => {
     res.status(500).json({ message: 'An error occurred while sending your message.' });
   }
 });
+
+
+module.exports = app; // Export the app for serverless function
+
+// If using a custom serverless function handler, Vercel expects a default export
+module.exports.handler = require('@vercel/node').createHandler(app);
 
 // Start Server
 app.listen(PORT, () => {
