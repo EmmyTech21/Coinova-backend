@@ -72,10 +72,9 @@ app.post('/subscribe', async (req, res) => {
 
     // Send Welcome Email
     const htmlContent = `
-     <html>
+      <html>
         <body style="font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333;">
           <div style="max-width: 600px; margin: auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-            
             <!-- Logo -->
             <div style="text-align: center; margin-bottom: 20px;">
               <img src="cid:coinovaLogo" alt="Coinova Logo" style="width: 150px; height: auto;">
@@ -113,7 +112,6 @@ app.post('/subscribe', async (req, res) => {
       </html>
     `;
     
-
     const mailOptions = {
       from: `Coinova <${process.env.EMAIL_USER}>`,
       to: email,
@@ -182,11 +180,10 @@ app.post('/contact', async (req, res) => {
   }
 });
 
-
-module.exports = app; // Export the app for serverless function
+module.exports = app; 
 
 // If using a custom serverless function handler, Vercel expects a default export
-module.exports.handler = require('@vercel/node').createHandler(app);
+module.exports.handler = require('@vercel/node')
 
 // Start Server
 app.listen(PORT, () => {
