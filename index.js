@@ -75,24 +75,20 @@ app.post('/subscribe', async (req, res) => {
       <html>
         <body style="font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333;">
           <div style="max-width: 600px; margin: auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-            <!-- Logo -->
             <div style="text-align: center; margin-bottom: 20px;">
               <img src="cid:coinovaLogo" alt="Coinova Logo" style="width: 150px; height: auto;">
             </div>
 
-            <!-- Welcome Heading -->
             <h1 style="text-align: center; color: #172A3A; font-size: 24px; font-weight: bold; text-shadow: 1px 1px 2px #09BC8A;">
               Welcome to <span style="color: #09BC8A;">Coinova</span>!
             </h1>
 
-            <!-- Main Content -->
             <p style="font-size: 16px; line-height: 1.6; text-align: center; color: #555;">
               Hi ${name},<br><br>
               Thank you for signing up for early access to Coinova! We’re thrilled to bring you the best in crypto-to-Naira trading. 
               Get ready for a revolutionary experience as we make cryptocurrency accessible, secure, and simple for everyone in Nigeria.
             </p>
 
-            <!-- Social Media Links -->
             <div style="text-align: center; margin-top: 30px;">
               <p style="font-size: 16px; color: #333; font-weight: bold;">Follow us on Social Media:</p>
               <a href="https://www.instagram.com/coinova_official/?igsh=bXZiemgxa3I3NXdt" target="_blank" style="margin: 0 10px; text-decoration: none;">
@@ -103,7 +99,6 @@ app.post('/subscribe', async (req, res) => {
               </a>
             </div>
 
-            <!-- Footer -->
             <p style="font-size: 12px; color: #888; text-align: center; margin-top: 40px;">
               &copy; 2024 Coinova. All rights reserved.
             </p>
@@ -180,12 +175,5 @@ app.post('/contact', async (req, res) => {
   }
 });
 
-module.exports = app; 
-
-// If using a custom serverless function handler, Vercel expects a default export
-module.exports.handler = require('@vercel/node')
-
-// Start Server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Export the app as the Vercel serverless function handler
+module.exports = app;
